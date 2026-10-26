@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cinema Seat Map — Task 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="task2.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">AITU · JS Lab</a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="task1.html">Game</a></li>
+          <li><a class="nav-link is-current" href="task2.html" aria-current="page">Seat map</a></li>
+          <li><a class="nav-link" href="task3.html">Character</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap page">
+    <h1>Cinema Seat Map</h1>
+    <p class="lead" id="intro"></p>
+
+    <div class="seat-layout">
+
+      <section class="panel" aria-labelledby="hall-title">
+        <h2 id="hall-title">Hall</h2>
+
+        <div class="filters">
+          <div class="field">
+            <label for="zone-filter" class="form-label">Zone</label>
+            <select id="zone-filter" class="input"></select>
+          </div>
+          <div class="field">
+            <label for="seat-search" class="form-label">Find a seat</label>
+            <input type="text" id="seat-search" class="input" placeholder="3-5 or 3" autocomplete="off">
+          </div>
+          <div class="field field-check">
+            <input type="checkbox" id="free-only">
+            <label for="free-only">Free seats only</label>
+          </div>
+        </div>
+        <p class="filter-info" id="filter-info" role="status" aria-live="polite"></p>
+
+        <div class="screen" aria-hidden="true">SCREEN</div>
+        <div class="hall" id="hall"></div>
+
+        <ul class="seat-legend" id="legend"></ul>
+      </section>
+
+      <aside class="panel" aria-labelledby="sel-title">
+        <h2 id="sel-title">Your seats</h2>
+        <p class="small-label" id="sel-count"></p>
+        <ul class="selected-list" id="selected-list"></ul>
+        <p class="total">Total: <strong id="total"></strong></p>
+
+        <p class="message" id="message" role="status" aria-live="polite"></p>
+
+        <div class="best-row">
+          <label for="best-count" class="form-label">Seats together</label>
+          <div class="guess-row">
+            <select id="best-count" class="input"></select>
+            <button type="button" class="btn btn-outline" id="best-btn">Best seats</button>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button type="button" class="btn btn-primary" id="book-btn">Book seats</button>
+          <button type="button" class="btn btn-outline" id="clear-btn">Clear</button>
+        </div>
+        <button type="button" class="btn btn-link" id="reset-btn">Reset the hall</button>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Assignment 5 · JavaScript Basics · Task 2</div>
+  </footer>
+</body>
+</html>

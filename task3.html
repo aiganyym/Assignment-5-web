@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Character Creator — Task 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="task3.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">AITU · JS Lab</a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="task1.html">Game</a></li>
+          <li><a class="nav-link" href="task2.html">Seat map</a></li>
+          <li><a class="nav-link is-current" href="task3.html" aria-current="page">Character</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap page">
+    <h1>Character Creator</h1>
+    <p class="lead" id="intro"></p>
+
+    <div class="creator-layout">
+
+      <section class="panel" aria-labelledby="form-title">
+        <h2 id="form-title">Create your hero</h2>
+
+        <p class="error-summary" id="error-summary" role="alert" tabindex="-1" hidden></p>
+
+        <form id="hero-form" action="#" method="get">
+
+          <div class="field">
+            <label for="hero-name" class="form-label">Name</label>
+            <input type="text" id="hero-name" name="heroName" class="input"
+                   required minlength="2" maxlength="16" autocomplete="off"
+                   aria-describedby="err-name">
+            <p class="field-error" id="err-name"></p>
+          </div>
+
+          <div class="field">
+            <label for="hero-class" class="form-label">Class</label>
+            <select id="hero-class" name="heroClass" class="input" required
+                    aria-describedby="class-hint err-class">
+              <option value="">Choose a class…</option>
+            </select>
+            <p class="hint" id="class-hint"></p>
+            <p class="field-error" id="err-class"></p>
+          </div>
+
+          <fieldset class="field" id="color-field">
+            <legend class="form-label">Color</legend>
+            <div class="swatches">
+              <input type="radio" id="color-red" name="heroColor" value="red" class="swatch-input" required aria-describedby="err-color">
+              <label for="color-red" class="swatch swatch-red">Red</label>
+              <input type="radio" id="color-blue" name="heroColor" value="blue" class="swatch-input" required aria-describedby="err-color">
+              <label for="color-blue" class="swatch swatch-blue">Blue</label>
+              <input type="radio" id="color-green" name="heroColor" value="green" class="swatch-input" required aria-describedby="err-color">
+              <label for="color-green" class="swatch swatch-green">Green</label>
+              <input type="radio" id="color-purple" name="heroColor" value="purple" class="swatch-input" required aria-describedby="err-color">
+              <label for="color-purple" class="swatch swatch-purple">Purple</label>
+            </div>
+            <p class="field-error" id="err-color"></p>
+          </fieldset>
+
+          <fieldset class="field" id="skills-field">
+            <legend class="form-label">Skills</legend>
+            <p class="points" id="points-left" role="status" aria-live="polite"></p>
+            <div class="skills-grid">
+              <div class="skill-field">
+                <label for="skill-strength" class="form-label">Strength</label>
+                <input type="number" id="skill-strength" name="strength" class="input"
+                       min="1" max="10" step="1" value="1" required inputmode="numeric"
+                       aria-describedby="err-strength err-points">
+                <p class="field-error" id="err-strength"></p>
+              </div>
+              <div class="skill-field">
+                <label for="skill-agility" class="form-label">Agility</label>
+                <input type="number" id="skill-agility" name="agility" class="input"
+                       min="1" max="10" step="1" value="1" required inputmode="numeric"
+                       aria-describedby="err-agility err-points">
+                <p class="field-error" id="err-agility"></p>
+              </div>
+              <div class="skill-field">
+                <label for="skill-magic" class="form-label">Magic</label>
+                <input type="number" id="skill-magic" name="magic" class="input"
+                       min="1" max="10" step="1" value="1" required inputmode="numeric"
+                       aria-describedby="err-magic err-points">
+                <p class="field-error" id="err-magic"></p>
+              </div>
+              <div class="skill-field">
+                <label for="skill-luck" class="form-label">Luck</label>
+                <input type="number" id="skill-luck" name="luck" class="input"
+                       min="1" max="10" step="1" value="1" required inputmode="numeric"
+                       aria-describedby="err-luck err-points">
+                <p class="field-error" id="err-luck"></p>
+              </div>
+            </div>
+            <p class="field-error" id="err-points"></p>
+          </fieldset>
+
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary">Create hero</button>
+            <button type="reset" class="btn btn-outline">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="panel" aria-labelledby="preview-title">
+        <h2 id="preview-title">Live preview</h2>
+        <div id="preview"></div>
+
+        <h2 class="result-title">Your hero</h2>
+        <div id="result" tabindex="-1" aria-live="polite"></div>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Assignment 5 · JavaScript Basics · Task 3</div>
+  </footer>
+</body>
+</html>

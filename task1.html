@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Breaker — Task 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="task1.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">AITU · JS Lab</a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a class="nav-link is-current" href="task1.html" aria-current="page">Game</a></li>
+          <li><a class="nav-link" href="task2.html">Configurator</a></li>
+          <li><a class="nav-link" href="task3.html">Tickets</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap page">
+    <section class="panel" id="game" aria-labelledby="game-title">
+      <h1 id="game-title">Code Breaker</h1>
+      <p class="lead" id="rules"></p>
+
+      <div class="secret" id="secret" role="group" aria-label="Secret code"></div>
+
+      <div class="attempts-row">
+        <span class="small-label">Attempts</span>
+        <div class="dots" id="dots"></div>
+        <span class="small-label" id="attempts-text"></span>
+      </div>
+
+      <form id="guess-form" novalidate>
+        <label for="guess" class="form-label">Your guess</label>
+        <div class="guess-row">
+          <input type="text" id="guess" name="guess" class="input" inputmode="numeric"
+                 autocomplete="off" aria-describedby="message">
+          <button type="submit" class="btn btn-primary" id="guess-btn">Guess</button>
+        </div>
+      </form>
+
+      <p class="message" id="message" role="status" aria-live="polite"></p>
+
+      <div class="history-head">
+        <h2>Your guesses</h2>
+        <button type="button" class="btn btn-outline" id="restart-btn">New game</button>
+      </div>
+      <ol class="history" id="history"></ol>
+
+      <p class="legend">
+        <span class="chip chip-right">right place</span> digit is in the code and in the right position ·
+        <span class="chip chip-wrong">wrong place</span> digit is in the code but in another position
+      </p>
+      <p class="best" id="best"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Assignment 5 · JavaScript Basics · Task 1</div>
+  </footer>
+</body>
+</html>
